@@ -1,0 +1,133 @@
+{
+  "_readme": "Every business detail lives in this file. Fill in the empty strings, then run: python build.py. Empty fields show on the site as [Bracketed Placeholders] and are listed when you build.",
+  "coming_soon": true,
+  "coming_soon_text": "Opening Soon",
+  "coming_soon_subtext": "Opening in October",
+  "business": {
+    "name": "Tamarac Laundromart",
+    "short_name": "",
+    "tagline": "",
+    "phone": "(754) 223-4119",
+    "email": "",
+    "street": "4111 W Commercial Blvd",
+    "city": "Tamarac",
+    "state": "FL",
+    "zip": "33319",
+    "country": "United States",
+    "region_name": "Tamarac",
+    "latitude": "",
+    "longitude": "",
+    "logo": "",
+    "founded_year": "",
+    "machine_brand": "",
+    "site_url": "https://tamaraclaundromart.com",
+    "hours": [
+      {
+        "days": "Sun – Thu",
+        "open": "7am",
+        "close": "11pm",
+        "last_wash": "10pm"
+      },
+      {
+        "days": "Fri & Sat",
+        "open": "Open 24 hours",
+        "close": "",
+        "last_wash": ""
+      }
+    ],
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "google_reviews": ""
+    }
+  },
+  "policies": {
+    "payment_methods": "online payments",
+    "attendant_hours": "Yes, an attendant is on site to help.",
+    "water_type": "We use city water.",
+    "wifi": "Yes, we have free Wi-Fi for all customers.",
+    "amenities": "We also have seating, a vending machine, TV, restrooms and parking.",
+    "wf_turnaround": "24 hours",
+    "wf_minimum": "15 lb minimum order",
+    "pd_turnaround": "24 hours",
+    "hangers_policy": "Clothes can be hung instead of folded (hangers are extra)",
+    "bagging_policy": "Returned in laundry bags",
+    "commercial_clients": "local businesses of all kinds."
+  },
+  "integrations": {
+    "_note": "pickup_url = where the 'Need a Delivery or Pickup?' buttons and the ZIP checker send visitors. form_endpoint = contact/bid form service (e.g. Formspree). tawk.to live chat and Google Tag Manager are optional. Leave empty to disable.",
+    "pickup_url": "",
+    "form_endpoint": "",
+    "recaptcha_site_key": "",
+    "tawk_property_id": "",
+    "tawk_widget_id": "",
+    "gtm_id": ""
+  },
+  "location": {
+    "name": ""
+  },
+  "_service_areas_help": "Delivery ZIP codes. The ZIP checker accepts every ZIP listed in service_zips AND in each service area's zips. Set service_areas_enabled to true to add a Service Areas menu tab and one page per area.",
+  "service_zips": [
+    "33319",
+    "33320",
+    "33321",
+    "33351"
+  ],
+  "service_areas_enabled": false,
+  "service_areas": [
+    {
+      "name": "Tamarac",
+      "slug": "tamarac",
+      "intro": "",
+      "zips": [],
+      "attractions": []
+    }
+  ],
+  "show_testimonials": false,
+  "testimonials": [
+    {
+      "name": "",
+      "text": "",
+      "rating": 5
+    },
+    {
+      "name": "",
+      "text": "",
+      "rating": 5
+    },
+    {
+      "name": "",
+      "text": "",
+      "rating": 5
+    }
+  ],
+  "blog_posts": [
+    {
+      "slug": "how-to-read-laundry-care-labels",
+      "title": "How to Read Laundry Care Labels (Without a Decoder Ring)",
+      "date": "2026-09-01",
+      "category": "Laundry Tips",
+      "image": "folded.jpg",
+      "excerpt": "Those little symbols on your clothing tags tell you exactly how to wash, dry and iron each item. Here is a quick guide.",
+      "body": "<p>Almost every piece of clothing carries a care label, and the symbols on it follow a simple system. Once you know the five basic shapes, you can read any tag in seconds.</p><h2>The five basic symbols</h2><ul><li><strong>Tub of water</strong> &ndash; washing. Dots inside show the maximum temperature: one dot is cold, more dots mean warmer.</li><li><strong>Triangle</strong> &ndash; bleaching. An empty triangle means any bleach is fine; a crossed-out triangle means none.</li><li><strong>Square</strong> &ndash; drying. A circle inside the square means tumble dry; dots show the heat setting.</li><li><strong>Iron</strong> &ndash; ironing, with dots for heat level.</li><li><strong>Circle</strong> &ndash; professional dry cleaning.</li></ul><h2>When in doubt</h2><p>If a label is missing or faded, wash in cold water on a gentle cycle and air dry. It is the safest default for almost any fabric.</p><p>Prefer to skip the guesswork entirely? Our wash &amp; fold team follows the care instructions on every item for you.</p>"
+    },
+    {
+      "slug": "what-to-expect-from-laundry-pickup-and-delivery",
+      "title": "What to Expect From Your First Laundry Pickup & Delivery",
+      "date": "2026-08-15",
+      "category": "Pickup & Delivery",
+      "image": "van.jpg",
+      "excerpt": "Trying pickup and delivery for the first time? Here is how it works from scheduling to getting your clothes back folded.",
+      "body": "<p>Laundry pickup and delivery is built to be simple, and your first order only takes a few minutes to set up.</p><h2>1. Schedule your pickup</h2><p>Use our Need a Delivery or Pickup? link or give us a call, pick a time that suits you and let us know any specific instructions.</p><h2>2. Leave your bag out</h2><p>Put your laundry in a bag and leave it where the driver can reach it. You do not need to be home.</p><h2>3. We wash, dry and fold</h2><p>Your laundry is weighed, washed to your preferences, dried and neatly folded.</p><h2>4. Delivered back to your door</h2><p>Clean clothes come back packed and ready to put away. You will get a notification when your order is on its way.</p>"
+    },
+    {
+      "slug": "tips-for-a-faster-laundromat-visit",
+      "title": "Four Tips for a Faster Laundromat Visit",
+      "date": "2026-07-20",
+      "category": "Laundry Tips",
+      "image": "machines-row.jpg",
+      "excerpt": "A little prep at home can cut your laundromat trip in half. Try these four easy habits.",
+      "body": "<p>A trip to the laundromat does not have to take your whole afternoon. These habits make a big difference.</p><ol><li><strong>Sort before you leave.</strong> Separate whites, colors and delicates at home so you can load the moment you arrive.</li><li><strong>Empty your pockets.</strong> Checking for tissues, pens and coins at home saves you from re-washing a load.</li><li><strong>Go at off-peak times.</strong> Weekday mornings and evenings are usually the quietest.</li><li><strong>Fold on site.</strong> Folding straight out of the dryer prevents wrinkles and saves time at home.</li></ol>"
+    }
+  ]
+}

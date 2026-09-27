@@ -4,6 +4,7 @@ Usage:  python build.py
 Reads site.json, writes the finished site to ./public, and lists any
 business details that are still empty.
 """
+import hashlib
 import html
 import json
 import re
@@ -40,6 +41,15 @@ def all_zips():
 POSTS = sorted(CFG["blog_posts"], key=lambda p: p["date"], reverse=True)
 
 MISSING = []  # (label) of every empty field that was rendered
+
+
+def asset_version(rel):
+    """Short content hash, added as ?v= so browsers reload a file whenever it changes."""
+    return hashlib.md5((ROOT / rel).read_bytes()).hexdigest()[:10]
+
+
+CSS_V = asset_version("assets/css/styles.css")
+JS_V = asset_version("assets/js/main.js")
 
 
 # --------------------------------------------------------------------------
@@ -188,8 +198,8 @@ def logo_html():
         return f'<img src="/assets/img/{esc(B["logo"])}" alt="{esc(B["name"])}" class="logo-img">'
     return (f'<span class="logo-mark" aria-hidden="true">'
             f'<svg viewBox="0 0 32 32"><rect x="3" y="3" width="26" height="26" rx="7" fill="currentColor"/>'
-            f'<circle cx="16" cy="17.5" r="7" fill="none" stroke="#fff" stroke-width="2.4"/>'
-            f'<circle cx="9" cy="8.5" r="1.4" fill="#fff"/><circle cx="13" cy="8.5" r="1.4" fill="#fff"/></svg></span>'
+            f'<circle class="lm-ring" cx="16" cy="17.5" r="7" fill="none" stroke="#fff" stroke-width="2.4"/>'
+            f'<circle class="lm-dot" cx="9" cy="8.5" r="1.4" fill="#fff"/><circle class="lm-dot" cx="13" cy="8.5" r="1.4" fill="#fff"/></svg></span>'
             f'<span class="logo-text">{NAME()}</span>')
 
 
@@ -356,6 +366,8 @@ def local_business_schema():
         "telephone": B["phone"] or None,
         "email": B["email"] or None,
         "url": B["site_url"] or None,
+        "logo": (B["site_url"].rstrip("/") + "/assets/img/logo-mark-512.png") if B["site_url"] else None,
+        "image": (B["site_url"].rstrip("/") + "/assets/img/store-1.jpg") if B["site_url"] else None,
         "address": {
             "@type": "PostalAddress",
             "streetAddress": B["street"] or None,
@@ -414,13 +426,15 @@ def page(path, title, desc, body, schemas=None, contact=True, body_class=""):
 <meta property="og:image" content="{esc(site)}/assets/img/store-1.jpg">
 <meta name="theme-color" content="#0E5566">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css?v={CSS_V}">
 {gtm_head}{ld}
 <script>window.SITE={json.dumps(cfg)};</script>
-<script src="/assets/js/main.js" defer></script>{recaptcha}
+<script src="/assets/js/main.js?v={JS_V}" defer></script>{recaptcha}
 </head>
 <body class="{body_class}">
 {gtm_body}{header(path)}

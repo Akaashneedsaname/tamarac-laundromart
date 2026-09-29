@@ -367,7 +367,7 @@ def local_business_schema():
         "email": B["email"] or None,
         "url": B["site_url"] or None,
         "logo": (B["site_url"].rstrip("/") + "/assets/img/logo-mark-512.png") if B["site_url"] else None,
-        "image": (B["site_url"].rstrip("/") + "/assets/img/store-1.jpg") if B["site_url"] else None,
+        "image": (B["site_url"].rstrip("/") + "/assets/img/storefront.jpg") if B["site_url"] else None,
         "address": {
             "@type": "PostalAddress",
             "streetAddress": B["street"] or None,
@@ -423,7 +423,7 @@ def page(path, title, desc, body, schemas=None, contact=True, body_class=""):
 <meta property="og:title" content="{esc(full_title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{esc(canonical)}">
-<meta property="og:image" content="{esc(site)}/assets/img/store-1.jpg">
+<meta property="og:image" content="{esc(site)}/assets/img/storefront.jpg">
 <meta name="theme-color" content="#0E5566">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
@@ -798,10 +798,9 @@ def build_pages():
       {zip_form()}
     </div>
     <div class="home-hero-media">
-      <div class="porthole">
-        <span class="porthole-ring" aria-hidden="true"></span>
-        <div class="porthole-glass">{img("store-1.jpg", "Inside Tamarac Laundromart", "cover", eager=True)}</div>
-      </div>
+      <figure class="hero-photo">
+        {img("storefront.jpg", "Tamarac Laundromart storefront at 4111 W Commercial Blvd", "cover", eager=True)}
+      </figure>
     </div>
   </div>
 </section>

@@ -538,7 +538,7 @@ def testimonials_slider():
 
 
 SERVICES = [
-    ("Self Service Laundry", "/self-service-laundry/", "machines-row.jpg",
+    ("Self Service Laundry", "/self-service-laundry/", "store-3.jpg",
      "Spacious, spotless and packed with modern washers and dryers."),
     ("Wash &amp; Fold", "/wash-and-fold/", "folded.jpg",
      "Drop off your laundry and pick it up clean, fresh and neatly folded."),
@@ -826,11 +826,11 @@ def build_pages():
     # Self service ------------------------------------------------------------
     ss = (hero(f"Self-Service Laundry in {CITY()}",
                "Clean, bright and full of modern machines, so you can get in, get done and get on with your day.",
-               "machines-row.jpg", [("Get Directions", esc(directions_url()), "btn-primary")])
+               "store-3.jpg", [("Get Directions", esc(directions_url()), "btn-primary")])
           + brand_banner()
-          + gallery("Take a look inside", [("laundry-room.jpg", "Laundromat interior"), ("machines-row.jpg", "Washers"),
-                                          ("dryer.jpg", "Dryer"), ("machines-portrait.jpg", "Stacked machines"),
-                                          ("laundry-room-2.jpg", "Laundry room")]))
+          + gallery("Take a look inside", [("store-3.jpg", "Rows of washers at Tamarac Laundromart"), ("store-4.jpg", "Dryers and entrance area"),
+                                          ("store-1.jpg", "Washers along the wall"), ("store-2.jpg", "Row of front-load washers"),
+                                          ("storefront.jpg", "Tamarac Laundromart storefront")]))
     add("/self-service-laundry/", f"Self-Service Laundry in {CITY_T()}",
         f"Modern self-service laundromat in {CITY_T()} with modern washers and dryers.", ss)
 
@@ -842,7 +842,7 @@ def build_pages():
                        "<p>We wash, dry and neatly fold every order for you. If you have any specific instructions, just ask and we will take them into account.</p>",
                        "store-1.jpg", alt="Washers at Tamarac Laundromart", tone="tone-soft")
           + gallery("Sorted, washed and folded", [("folded.jpg", "Folded laundry"), ("store-2.jpg", "Inside Tamarac Laundromart"),
-                                                  ("towels.jpg", "Folded towels"), ("laundry-room.jpg", "Laundry room")])
+                                                  ("towels.jpg", "Folded towels"), ("store-4.jpg", "Dryers at Tamarac Laundromart")])
           # "At a glance" list: edit the wording in site.json > policies; layout is .glance in styles.css
           + f'''<section class="section glance"><div class="container">
   <h2 class="center">Wash &amp; fold at a glance</h2>
@@ -930,13 +930,13 @@ def build_pages():
         add(f'/blog/{p["slug"]}/', p["title"], p["excerpt"], body, schemas=[schema])
 
     # About ----------------------------------------------------------------------------
-    about = (hero(f"Modern laundry for busy {CITY()} lives", f"Get to know the team behind {NAME()}.", "laundry-room.jpg",
+    about = (hero(f"Modern laundry for busy {CITY()} lives", f"Get to know the team behind {NAME()}.", "store-4.jpg",
                   [("Contact Us", "/about-us/contact-us/", "btn-primary")])
              + image_text("Our story",
                           f"<p>{NAME()} is built on a simple idea: laundry should be easy, and a laundromat should be a place you actually like visiting.</p>"
                           f"<p>We keep our store clean and bright, our machines modern and well maintained, and our service friendly, so every visit is quick and stress-free for our {CITY()} neighbors.</p>"
                           "<p>Whether you wash your own clothes with us, drop them off or have them picked up, you get a team that cares about doing it right.</p>",
-                          "machines-row.jpg", alt="Washers in our store")
+                          "store-3.jpg", alt="Rows of washers at Tamarac Laundromart")
              + image_text("What we care about",
                           "<ul class='check-list'><li>A spotless, well-lit, comfortable store</li><li>Machines that work, every time</li><li>Careful handling of every order</li><li>Friendly, helpful service</li></ul>",
                           "towels.jpg", reverse=True, tone="tone-soft", alt="Folded towels")
@@ -944,14 +944,14 @@ def build_pages():
              + latest_posts())
     add("/about-us/", "About Us", f"Learn about {NAME_T()}, a laundromat in {CITY_T()}.", about)
 
-    contact = (hero("Contact Us", "Questions about our services or an order? We are happy to help.", "laundry-room-2.jpg")
+    contact = (hero("Contact Us", "Questions about our services or an order? We are happy to help.", "store-1.jpg")
                + form_section("Still have questions?", "Get in touch", contact_form(),
                               f"<p>Send us a message and we will reply as soon as we can, or call us at <a href='{tel_href()}'>{need(B['phone'], 'Phone')}</a>.</p>"
                               + (f"<p>Email: <a href='mailto:{esc(B['email'])}'>{esc(B['email'])}</a></p>" if B['email'] else "")))
     add("/about-us/contact-us/", "Contact Us", f"Contact {NAME_T()} in {CITY_T()}.", contact)
 
     faq = hero("Frequently Asked Questions", "Answers to the questions we hear most. Cannot find yours? Just ask.",
-               "machines-portrait.jpg", [("Contact Us", "/about-us/contact-us/", "btn-primary")]) + faq_html()
+               "store-2.jpg", [("Contact Us", "/about-us/contact-us/", "btn-primary")]) + faq_html()
     add("/about-us/faq/", "Frequently Asked Questions",
         f"Answers to common questions about self-service laundry, wash & fold, pickup & delivery and commercial laundry at {NAME_T()}.",
         faq, schemas=[faq_schema()])
